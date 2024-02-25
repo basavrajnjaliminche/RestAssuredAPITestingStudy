@@ -8,6 +8,7 @@ public class PostAPIRequests {
 	public void createBooking() {
 		
 		//prepare request body
+		//also create with pojo method 
 		
 		
 	}
