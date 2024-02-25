@@ -3,12 +3,14 @@ package com.testautomation.apitesting.tests;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
+import com.testautomation.apitesting.utils.BaseTest;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import net.minidev.json.JSONObject;
 
-public class PostAPIRequests {
+public class PostAPIRequests extends BaseTest{
 
 	@Test
 	public void createBooking() {
@@ -39,7 +41,8 @@ public class PostAPIRequests {
 							.post()
 						.then()
 							.assertThat()
-							//.log().ifValidationFails()
+							//.log().ifValidationFails // print all logs if test fails
+							//.log().headers()
 							.statusCode(200)
 							.body("booking.firstname", Matchers.equalTo("api testing"))
 							.body("booking.totalprice", Matchers.equalTo(1000))
