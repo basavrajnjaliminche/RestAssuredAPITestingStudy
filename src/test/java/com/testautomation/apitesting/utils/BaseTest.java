@@ -8,7 +8,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public void beforeMethod() {
-		
+
 	RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		
 	}
